@@ -11,9 +11,7 @@ def home():
 def current_datetime():
     date_now = datetime.now()
 
-    date_today = f"{date_now.strftime('%d')}/{date_now.strftime('%m')}/{date_now.strftime('%Y')}"
-
-    result_date = f"{date_today} {date_now.strftime('%H')}:{date_now.strftime('%M')}:{date_now.strftime('%S')}"
+    result_datetime = f"{date_now.strftime('%d/%m/%Y %H:%M:%S %p')}"
     
     hour_now = int(date_now.strftime("%H"))
     
@@ -26,7 +24,7 @@ def current_datetime():
     if hour_now >= 18:
         message = "Boa noite!"
     
-    return {"current_datetime": result_date, "message": message}
+    return {"current_datetime": result_datetime, "message": message}
     
 
 
